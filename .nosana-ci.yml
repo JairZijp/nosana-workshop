@@ -14,3 +14,15 @@ jobs:
     commands:
       - npm ci
       - npx hardhat compile
+    artifacts:
+      - name: node_modules
+      - name: artifacts
+        
+  - name: test
+    environment:
+      REPORT_GAS: "true"
+    commands:
+      - npx hardhat test
+    resources:
+      - name: node_modules
+      - name: artifacts
