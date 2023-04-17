@@ -20,7 +20,7 @@ We recommend using TypeScript, but if you are not familiar with it just pick Jav
 
 Next, if you take a look in the `contracts/` folder, you'll see `Lock.sol`:
 
-```
+```solidity
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
@@ -77,7 +77,7 @@ jobs:
       - npx hardhat compile 
 ```
 
-**HINT:** for `image` choose [node](https://hub.docker.com/_/node), e.g. `node:19`
+**HINT:** for `image` choose [node](https://hub.docker.com/_/node), e.g. `node:16`
 
 When done, `add`, `commit` and `push` all your files to your repo, and see the CI engine take over!
 
