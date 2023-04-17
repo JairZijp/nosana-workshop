@@ -26,3 +26,11 @@ jobs:
     resources:
       - name: node_modules
       - name: artifacts
+  - name: deploy
+    secrets:
+      - PRIVATE_KEY
+    commands:
+      - npx hardhat run scripts/deploy.js --network polygon_mumbai
+    resources:
+      - name: node_modules
+      - name: artifacts
