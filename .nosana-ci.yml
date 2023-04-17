@@ -1,31 +1,16 @@
 # .nosana-ci.yml
 nosana:
-  description: Build, Test and Deploy software.
+  description: Build, Test and Deploy software
 
 global:
-  image: test
+  image: node:19
   trigger:
     push:
       branches:
         - main
 
 jobs:
-
   - name: build
     commands:
+      - npm ci
       - npx hardhat compile
-    artifacts:
-      - name: my-build
-        path: .
-
-  - name: test
-    commands:
-      - echo "testing..."
-    resources:
-      - name: my-build
-
-  - name: deploy
-    commands:
-      - echo "deploying..."
-    resources:
-      - name: my-build
