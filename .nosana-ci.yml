@@ -12,25 +12,4 @@ global:
 jobs:
   - name: build
     commands:
-      - npm ci
-      - npx hardhat compile
-    artifacts:
-      - name: node_modules
-      - name: artifacts
-        
-  - name: test
-    environment:
-      REPORT_GAS: "true"
-    commands:
-      - npx hardhat test
-    resources:
-      - name: node_modules
-      - name: artifacts
-  - name: deploy
-    secrets:
-      - PRIVATE_KEY
-    commands:
-      - npx hardhat run scripts/deploy.js --network polygon_mumbai
-    resources:
-      - name: node_modules
-      - name: artifacts
+      - echo $SECRET_THAT_DOESNT_EXISTS
