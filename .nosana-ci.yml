@@ -3,7 +3,7 @@ nosana:
   description: Build, Test and Deploy software
 
 global:
-  image: node:161
+  image: node:16
   trigger:
     push:
       branches:
