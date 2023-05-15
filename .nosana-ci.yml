@@ -12,4 +12,4 @@ global:
 jobs:
   - name: build
     commands:
-      - sdascsac
+      - echo '...'
