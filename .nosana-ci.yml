@@ -15,5 +15,10 @@ jobs:
       - npm ci
       - npx hardhat compile
   - name: test
+    environment:
+      REPORT_GAS: "true"
     commands:
-      - echo 'test.'
+      - npx hardhat test
+    resources:
+      - name: node_modules
+      - name: artifacts
