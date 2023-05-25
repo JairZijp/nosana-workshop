@@ -16,4 +16,4 @@ jobs:
       - npx hardhat compile
   - name: test
     commands:
-      - echo 'test'
+      - echo 'test.'
