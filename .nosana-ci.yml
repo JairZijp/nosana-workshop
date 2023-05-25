@@ -14,6 +14,6 @@ jobs:
     commands:
       - npm ci
       - npx hardhat compile
-  - name: build
+  - name: test
     commands:
       - echo 'test'
