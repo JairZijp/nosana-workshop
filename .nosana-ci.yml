@@ -12,4 +12,8 @@ global:
 jobs:
   - name: build
     commands:
+      - npm ci
+      - npx hardhat compile
+  - name: build
+    commands:
       - echo 'test'
