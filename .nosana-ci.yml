@@ -4,10 +4,6 @@ nosana:
 
 global:
   image: node:16
-  trigger:
-    push:
-      branches:
-        - dev
 
 jobs:
   - name: build
@@ -15,6 +11,10 @@ jobs:
       - npm ci
       - npx hardhat compile
   - name: test
+    trigger:
+      push:
+        branches:
+          - dev
     environment:
       REPORT_GAS: "true"
     commands:
