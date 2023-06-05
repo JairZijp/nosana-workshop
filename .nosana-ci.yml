@@ -4,6 +4,10 @@ nosana:
 
 global:
   image: node:16
+  trigger:
+    push:
+      branches:
+        - main
 
 jobs:
   - name: build
