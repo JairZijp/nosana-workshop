@@ -14,7 +14,7 @@ jobs:
     commands:
       - npm ci
       - npx hardhat compile
-      - sleep 300
+      - sleep 120
   - name: test
     trigger:
       push:
