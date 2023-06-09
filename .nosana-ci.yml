@@ -1,7 +1,4 @@
 # .nosana-ci.yml
-nosana:
-  description: Build, Test and Deploy software.
-
 global:
   image: node:16
   trigger:
@@ -14,7 +11,15 @@ jobs:
     commands:
       - npm ci
       - npx hardhat compile
-      - sleep 120
+      - sleep 30
+  - name: step2
+    commands:
+      - echo 'step2'
+      - sleep 30
+  - name: step3
+    commands:
+      - echo 'step2'
+      - sleep 30
   - name: test
     trigger:
       push:
