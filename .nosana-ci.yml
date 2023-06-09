@@ -14,11 +14,10 @@ jobs:
   - name: step2
     commands:
       - echo 'step2'
-      - messup
   - name: step3
     commands:
       - echo 'step2'
-      - sleep 10
+      - npx hardhat test
   - name: test
     trigger:
       push:
