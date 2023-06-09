@@ -14,7 +14,7 @@ jobs:
   - name: step2
     commands:
       - echo 'step2'
-      - sleep 10
+      - messup
   - name: step3
     commands:
       - echo 'step2'
