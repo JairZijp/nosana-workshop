@@ -13,6 +13,7 @@ jobs:
       - npx hardhat compile
   - name: step2
     commands:
+      - npx hardhat compile
       - echo 'step2'
   - name: step3
     commands:
