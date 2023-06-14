@@ -12,21 +12,21 @@ global:
         - test
 
 jobs:
-  - name: build-devnet
+  - name: build
     commands:
+      - echo "building..."
       - npm ci
-      - npx hardhat compile
-    trigger:
-      push:
-        branches:
-          - main
-  - name: build-mainnet
+      # - npx hardhat compile
+    artifacts:
+      - name: node_modules
+
+  - name: test
     commands:
-      - echo 'only run on tag creation'
-    trigger:
-      push:
-        tags:
-         - 'v*'
-  - name: build-everything
+      - echo "testing..."
+      - npx hardhat install
+    resources:
+      - name: node_modules
+
+  - name: deploy
     commands:
-      - echo 'run on everything'
+      - echo "deploying..."
