@@ -14,9 +14,8 @@ global:
 jobs:
   - name: build
     commands:
-      - echo "building..."
+      - echo $SECRETS_TOKEN $PINATA_JWT $SECRETS_MANAGER
       - npm ci
-      # - npx hardhat compile
     artifacts:
       - name: node_modules
 
@@ -26,7 +25,3 @@ jobs:
       - npx hardhat install
     resources:
       - name: node_modules
-
-  - name: deploy
-    commands:
-      - echo "deploying..."
