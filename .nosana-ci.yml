@@ -5,29 +5,25 @@ global:
     push:
       branches:
         - main
+      tags:
+        - 'v*'
 
 jobs:
-  - name: build
+  - name: build-devnet
     commands:
       - npm ci
       - npx hardhat compile
-  - name: step2
-    commands:
-      - npx hardhat compile
-      - echo 'step2'
-  - name: step3
-    commands:
-      - echo 'step2'
-      - npx hardhat test
-  - name: test
     trigger:
       push:
         branches:
-          - dev
-    environment:
-      REPORT_GAS: "true"
+          - main
+  - name: build-mainnet
     commands:
-      - npx hardhat test
-    resources:
-      - name: node_modules
-      - name: artifacts
+      - echo 'only run on tag creation'
+    trigger:
+      push:
+        tags:
+         - 'v*'
+  - name: build-everything
+    commands:
+      - echo 'run on everything'
