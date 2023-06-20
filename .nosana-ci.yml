@@ -1,7 +1,7 @@
 # .nosana-ci.yml
 global:
   image: node:16
-  trigger:
+   trigger:
 push:
       branches:
         - main
