@@ -2,7 +2,7 @@
 global:
   image: node:16
   trigger:
-push:
+ push:
       branches:
         - main
       tags:
